@@ -23,7 +23,7 @@
       letter-spacing: 2px;
     }
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -42,105 +42,93 @@
       font-weight: bold;
       letter-spacing: 1px;
     }
-    .video-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      justify-content: center;
-    }
-    .video-card {
+    .gif-row {
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-      padding: 1rem 0.5rem 1.2rem 0.5rem;
+      margin-bottom: 22px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      padding: 1.2rem 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 320px;
-      min-width: 0;
-      margin-bottom: 16px;
       transition: box-shadow 0.2s;
     }
-    .video-card:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.11);
+    .gif-row:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.14);
     }
-    .video-title {
-      font-size: 1.07rem;
+    .gif-title {
+      font-size: 1.08rem;
       font-weight: 500;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       color: #444;
       text-align: center;
       word-break: break-word;
     }
     img {
-      width: 100%;
-      height: 180px;
-      border-radius: 6px;
+      width: 95%;
+      max-width: 480px;
+      height: auto;
+      border-radius: 7px;
       background: #222;
       object-fit: cover;
       outline: none;
       display: block;
+      margin-bottom: 0.2rem;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 700px) {
       .container { max-width: 99vw; }
-      .video-card { width: 46vw; min-width: 180px;}
-      img { height: 19vw; min-height: 120px;}
-    }
-    @media (max-width: 600px) {
-      .video-card { width: 98vw; }
-      img { height: 38vw; }
+      img { max-width: 98vw; }
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <img src="./static/videos/fe72fa1c8ecee5ee47e39c24be35882bbf26b99f159432ad3281324740737b7b.gif" width="320" height="180" alt="openoasis baseline #1">
-    <h1>voxelwm</h1>
+    <h1>VoxelWM</h1>
   </div>
   <div class="container">
     <div class="intro">
       <!-- 你可以在这里添加项目简介、方法描述等 -->
     </div>
-    <div class="section-title">Baseline: openoasis</div>
-    <div class="video-grid">
-      <!-- GIF卡片（9个） -->
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #1</div>
-        <img src="./static/videos/fe.gif" width="320" height="180" alt="openoasis baseline #1">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #2</div>
-        <img src="./static/videos/ebc67b4cf20cb290edec1e1b3b278a915a2cd05af0fb1d3dab8ef98c45618f7e.gif" width="320" height="180" alt="openoasis baseline #2">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #3</div>
-        <img src="./static/videos/f386bcf4937230883e2945f89ca3adf65e59746e97a772c90243e7b65274d20e.gif" width="320" height="180" alt="openoasis baseline #3">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #4</div>
-        <img src="./static/videos/eded9362fb3ae1b9a537cc7d9f331c38be95bb08d015e02a354fa279ef235174.gif" width="320" height="180" alt="openoasis baseline #4">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #5</div>
-        <img src="./static/videos/23be425ddc5844d867b92b468af8af453263e45a1d59422c2a1103a51423a08f.gif" width="320" height="180" alt="openoasis baseline #5">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #6</div>
-        <img src="./static/videos/e4bbbc77701543d92b84e359a7f0f23d9cc9ad4e401e286131ed569c2728a5e1.gif" width="320" height="180" alt="openoasis baseline #6">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #7</div>
-        <img src="./static/videos/e78512cd095369f85b8bb5002f468815c575f97e50f27c35ac41218ca7673ff5.gif" width="320" height="180" alt="openoasis baseline #7">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #8</div>
-        <img src="./static/videos/d7c6b63d343429700a05663c2d2ddb0f5390dcf11928fb0590196811f549c496.gif" width="320" height="180" alt="openoasis baseline #8">
-      </div>
-      <div class="video-card">
-        <div class="video-title">openoasis baseline #9</div>
-        <img src="./static/videos/e9f8f2715e12edf2278e0ccc3b9df68bd46cc28eaed75178dcbcfccc65280820.gif" width="320" height="180" alt="openoasis baseline #9">
-      </div>
+    <div class="section-title">Comparison (left : gt  right: open-oasis) </div>
+
+    <!-- 下面每个 .gif-row 就是一行一个合成gif -->
+    <div class="gif-row">
+      <div class="gif-title">#1 </div>
+      <img src="./static/videos/fe72fa1c8ecee5ee47e39c24be35882bbf26b99f159432ad3281324740737b7b_combined.gif" alt="Combined #1">
     </div>
+    <div class="gif-row">
+      <div class="gif-title">#2</div>
+      <img src="./static/videos/ebc67b4cf20cb290edec1e1b3b278a915a2cd05af0fb1d3dab8ef98c45618f7e_combined.gif" alt="Combined #2">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title">#3</div>
+      <img src="./static/videos/f386bcf4937230883e2945f89ca3adf65e59746e97a772c90243e7b65274d20e_combined.gif" alt="Combined #3">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title">#4</div>
+      <img src="./static/videos/eded9362fb3ae1b9a537cc7d9f331c38be95bb08d015e02a354fa279ef235174_combined.gif" alt="Combined #4">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title">#5</div>
+      <img src="./static/videos/23be425ddc5844d867b92b468af8af453263e45a1d59422c2a1103a51423a08f_combined.gif" alt="Combined #5">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title"> #6</div>
+      <img src="./static/videos/e4bbbc77701543d92b84e359a7f0f23d9cc9ad4e401e286131ed569c2728a5e1_combined.gif" alt="Combined #6">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title">#7</div>
+      <img src="./static/videos/e78512cd095369f85b8bb5002f468815c575f97e50f27c35ac41218ca7673ff5_combined.gif" alt="Combined #7">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title"> #8</div>
+      <img src="./static/videos/d7c6b63d343429700a05663c2d2ddb0f5390dcf11928fb0590196811f549c496_combined.gif" alt="Combined #8">
+    </div>
+    <div class="gif-row">
+      <div class="gif-title">#9</div>
+      <img src="./static/videos/e9f8f2715e12edf2278e0ccc3b9df68bd46cc28eaed75178dcbcfccc65280820_combined.gif" alt="Combined #9">
+    </div>
+
   </div>
 </body>
 </html>
