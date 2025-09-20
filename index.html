@@ -23,7 +23,7 @@
       letter-spacing: 2px;
     }
     .container {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -75,6 +75,66 @@
       display: block;
       margin-bottom: 0.2rem;
     }
+
+    /* WorldMem vs GT 对比样式 */
+    .comparison-row {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      padding: 1.2rem;
+      transition: box-shadow 0.2s;
+    }
+    .comparison-row:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.14);
+    }
+    .comparison-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #444;
+      text-align: center;
+    }
+    .comparison-container {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .comparison-item {
+      flex: 1;
+      max-width: 400px;
+      text-align: center;
+    }
+    .comparison-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .comparison-item img {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+    .worldmem-label {
+      color: #2563eb;
+    }
+    .gt-label {
+      color: #dc2626;
+    }
+
+    @media (max-width: 900px) {
+      .comparison-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .comparison-item {
+        max-width: 480px;
+      }
+    }
     @media (max-width: 700px) {
       .container { max-width: 99vw; }
       img { max-width: 98vw; }
@@ -89,9 +149,10 @@
     <div class="intro">
       <!-- 你可以在这里添加项目简介、方法描述等 -->
     </div>
-    <div class="section-title">Visual Comparison </div>
+    
+    <div class="section-title">Visual Comparison</div>
 
-    <!-- 下面每个 .gif-row 就是一行一个合成gif -->
+    <!-- 原有的合成gif展示 -->
     <div class="gif-row">
       <img src="./static/videos/fe72fa1c8ecee5ee47e39c24be35882bbf26b99f159432ad3281324740737b7b_combined.gif" alt="Combined #1">
     </div>
@@ -118,6 +179,65 @@
     </div>
     <div class="gif-row">
       <img src="./static/videos/e9f8f2715e12edf2278e0ccc3b9df68bd46cc28eaed75178dcbcfccc65280820_combined.gif" alt="Combined #9">
+    </div>
+
+    <!-- WorldMem vs GT 对比部分 -->
+    <div class="section-title">WorldMem vs Ground Truth</div>
+
+    <div class="comparison-row">
+      <div class="comparison-title">Sample 1</div>
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <div class="comparison-label worldmem-label">WorldMem</div>
+          <img src="./static/videos/video_0_step000000_pred.gif" alt="WorldMem Sample 1">
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-label gt-label">Ground Truth</div>
+          <img src="./static/videos/video_0_step000000_gt.gif" alt="GT Sample 1">
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-row">
+      <div class="comparison-title">Sample 2</div>
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <div class="comparison-label worldmem-label">WorldMem</div>
+          <img src="./static/videos/video_1_step000000_pred.gif" alt="WorldMem Sample 2">
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-label gt-label">Ground Truth</div>
+          <img src="./static/videos/video_1_step000000_gt.gif" alt="GT Sample 2">
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-row">
+      <div class="comparison-title">Sample 3</div>
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <div class="comparison-label worldmem-label">WorldMem</div>
+          <img src="./static/videos/video_2_step000000_pred.gif" alt="WorldMem Sample 3">
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-label gt-label">Ground Truth</div>
+          <img src="./static/videos/video_2_step000000_gt.gif" alt="GT Sample 3">
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-row">
+      <div class="comparison-title">Sample 4</div>
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <div class="comparison-label worldmem-label">WorldMem</div>
+          <img src="./static/videos/video_3_step000000_pred.gif" alt="WorldMem Sample 4">
+        </div>
+        <div class="comparison-item">
+          <div class="comparison-label gt-label">Ground Truth</div>
+          <img src="./static/videos/video_3_step000000_gt.gif" alt="GT Sample 4">
+        </div>
+      </div>
     </div>
 
   </div>
